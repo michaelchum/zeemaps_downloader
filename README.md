@@ -1,3 +1,6 @@
+zeemaps_downloader
+========
+
 By default, the data is fetched from ZeeMap-748667.csv in the current working directory and ./pictures is created to store all the downloaded pictures
 
 Only .PNG and .JPG files are downloaded
