@@ -11,3 +11,4 @@ PATH_TO_CSV_FILE = "ZeeMap-748667.csv"
 
 PATH_TO_IMAGE_DIRECTORY = "pictures"
 
+The pictures are stored in the city_state_country_#.png format, with # being the the index for multiplicates
