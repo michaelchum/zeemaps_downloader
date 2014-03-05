@@ -36,14 +36,14 @@ content[1..content.length].each do |row|
     end
     
     name += ext
-      path_name = PATH_TO_IMAGE_DIRECTORY + "/" + name
-      puts path_name
-      open(path_name, 'wb') do |file|
-        begin
-          file << open(url).read
-        rescue
-          break
-        end
+    path_name = PATH_TO_IMAGE_DIRECTORY + "/" + name
+    puts path_name
+    open(path_name, 'wb') do |file|
+      begin
+        file << open(url).read
+      rescue
+        break
+      end
     end
   end
 end
