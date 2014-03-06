@@ -4,11 +4,10 @@ require 'fileutils'
 
 PATH_TO_CSV_FILE = "ZeeMap-748667.csv"
 PATH_TO_IMAGE_DIRECTORY = "pictures"
+# There are some youtube videos, .gif and .odt files however we only want .png and .jpg files
+ACCEPTED_FORMATS = [".jpg", ".png", ".JPG", ".PNG"]
 
 content = CSV.read(PATH_TO_CSV_FILE, encoding: "ISO8859-1") # IMPORTANT Change encoding to ISO for proper rendering
-
-# There are some youtube videos, .gif and .odt files however we only want .png and .jpg files
-accepted_formats = [".jpg", ".png", ".JPG", ".PNG"]
 
 # Check if image folder exists. If not, create
 unless File.directory? (PATH_TO_IMAGE_DIRECTORY)
@@ -18,7 +17,7 @@ end
 locations = {}
 
 content[1..content.length].each do |row|
-  if row[8] != nil and accepted_formats.include? File.extname(row[8])
+  if row[8] != nil and ACCEPTED_FORMATS.include? File.extname(row[8])
     ext = File.extname(row[8])
     url = URI.encode("http:" + row[8])
     row[3] ? name = row[3] + "_" : name = "None" + "_"
